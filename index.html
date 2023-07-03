@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <title>Social Media Dashboard</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/dist/style.css" />
+        <script defer src="/dist/script.js"></script>
+        <style> 
+        </style>
+    </head>
+
+
+    <body>
+        <header class = 'header container1'>
+            <div class="header__title">
+                <h1>Social Media Dashboard</h1>
+                    <span class = "header__subtitle">Total Followers: 23,004</span>
+            </div>
+            <fieldset class = "header__toggle toggle" aria-label = "theme toggle" role = "radiogroup">
+                <legend class = legend> Dark Mode </legend>
+                <div class="toggle__wrapper">
+                    <input type = "radio" name = "theme" id = "dark">
+                    <input type = "radio" name = "theme" id = "light" class = "toggle__light">
+                    <span aria-hidden="true" class = "toggle__background"></span>
+                    <span aria-hidden="true" class = "toggle__button"></span>  
+                </div>
+            </fieldset>
+        </header>
+
+        <main>
+            <section class = "container1">
+                <div class="card card__facebook">
+                    <div class="card__platform">
+                        <div class="card__icon">
+                            <img src = "images/icon-facebook.svg">    
+                        </div>
+                        <div class="card__username">@_kenny.guo</div>
+                    </div>
+                    <div class="card__count--big">
+                        1.21M</div>
+                    <div class="card__label">FOLLOWERS</div>
+                    <div class="card__change--up"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>1,198 Today</div>
+                </div>
+                <div class="card card__twitter">
+                    <div class="card__platform">
+                        <div class="card__icon">
+                            <img src = "images/icon-twitter.svg">    
+                        </div>
+                        <div class="card__username">@_kenny.guo</div>
+                    </div>
+                    <div class="card__count--big">
+                        3.23M</div>
+                    <div class="card__label">FOLLOWERS</div>
+                    <div class="card__change--up"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>7,143 Today</div>
+                </div>
+
+                <div class="card card__instagram">
+                    <div class="card__platform">
+                        <div class="card__icon">
+                            <img src = "images/icon-instagram.svg">    
+                        </div>
+                        <div class="card__username">@_kenny.guo</div>
+                    </div>
+                    <div class="card__count--big">
+                        4.12M</div>
+                    <div class="card__label">FOLLOWERS</div>
+                    <div class="card__change--up"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>3,623 Today</div>
+                </div>
+                <div class="card card__youtube">
+                    <div class="card__platform">
+                        <div class="card__icon">
+                            <img src = "images/icon-youtube.svg">    
+                        </div>
+                        <div class="card__username">@_kenny.guo</div>
+                    </div>
+                    <div class="card__count--big">
+                        8.51M</div>
+                    <div class="card__label">FOLLOWERS</div>
+                    <div class="card__change--down"> <img src = "/images/icon-down.svg" style = "padding-bottom: 2px";/>111,142 Today</div>
+                </div>
+            </section>
+    <h1 class = "header container1">Overview - Today</h1>
+            <section class = "container1">
+                
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Page Views
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-facebook.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>3%</div>
+                            <div class="card__count--small">
+                                412,231
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Likes  
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-facebook.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>11%</div>
+                            <div class="card__count--small">
+                                1.42M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Likes
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-instagram.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>%2,559</div>
+                            <div class="card__count--small">
+                                55.1M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Profile Views
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-instagram.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>92%</div>
+                            <div class="card__count--small">
+                                4.11M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Retweets
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-twitter.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>69%</div>
+                            <div class="card__count--small">
+                                2.35M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Page Views
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-twitter.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--up--small"> <img src = "/images/icon-up.svg" style = "padding-bottom: 2px";/>55%</div>
+                            <div class="card__count--small">
+                                1.4M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Likes
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-youtube.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--down--small"> <img src = "/images/icon-down.svg" style = "padding-bottom: 2px";/>11%</div>
+                            <div class="card__count--small">
+                                100,012
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card__small">
+                    <div class="card__top">
+                        <div class="card__label--small">
+                        Total Views
+                        </div>
+                        <div class="card__icon--small">
+                            <img src = "images/icon-Youtube.svg">   
+                        </div> 
+                    </div>
+                    <div>
+                        <div class = "card__bottom">
+                            <div class="card__change--down--small"> <img src = "/images/icon-down.svg" style = "padding-bottom: 2px";/>23%</div>
+                            <div class="card__count--small">
+                                5.1M
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </body>
+</html>
