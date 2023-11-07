@@ -13,10 +13,11 @@ function scssTask() {
     return src('app/scss/style.scss', { sourcemaps: true })
     //sourcemaps for debugging and viewing code
         .pipe(sass()) //running sass
-        .pipe(postcss([autoprefixer(), cssnano()])) //autoprefixer will add browser prefixes to support old browsers
-        //cssnano minimizes css file
+        .pipe(postcss([autoprefixer(), cssnano()])) 
+        //autoprefixer will add browser prefixes to support old browsers
+        //cssnano minfies css file
         .pipe(dest('dist', { sourcemaps: '.' }));
-        //puts file into dist - . means same location as dist
+        //puts file into dist. '.' means same location as dist
 }
 
 //Javascript task
@@ -25,11 +26,12 @@ function jsTask() {
     .pipe (babel({presets: ['@babel/preset-env']}))
     //allow older browsers to support javascript
     .pipe(terser())
-    //terser minimizes javascript file
+    //terser minifies JS file
     .pipe(dest('dist', { sourcemaps: '.' }));
-    //destination file goes into dist folder
+    //destination script.js file goes into dist folder, along with its map
 }
 
+//Browsersync start
 function browserSyncServer(cb) {
     browsersync.init({
       server: {
@@ -37,20 +39,20 @@ function browserSyncServer(cb) {
       },
       notify: {
         styles: {
-          top: 'auto',
-          bottom: '0',
         },
       },
     });
     cb();
   }
+
+  //Browsersync reload
   function browserSyncReload(cb) {
     browsersync.reload();
     cb();
   }
 
-//Watch task will keep watch for any changes then call BrowserSyncReload if there are to the html or javascript files
 
+//Watch task will keep watch for any changes then call BrowserSyncReload
 function watchTask(){
     watch('*.html', browserSyncReload);
     watch(
@@ -59,6 +61,6 @@ function watchTask(){
     );
 }
 
-//Default gulp task
+//Execute all tasks in series (at the same time)
 exports.default = series(scssTask, jsTask, browserSyncServer, watchTask);
 
