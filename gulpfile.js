@@ -15,33 +15,33 @@ const paths = {
     js: 'src/js/**/*.js',
   },
   dist: {
-    css: 'gulp/dist/css',
-    js: 'gulp/dist/js',
-    flaskDist: 'flask_app/static/dist', // Add this path for Flask
+    //css: 'dist/css',
+    //js: 'dist/js',
+    flaskDist: 'static/dist', // Add this path for Flask
   },
 };
 
 //SCSS Task
 gulp.task('scss', function(){
-  return gulp.src(paths.src.scss, {sourcemaps: true})
+  return gulp.src('src/scss/style.scss')
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss([autoprefixer(), cssnano()])) 
       //autoprefixer will add browser prefixes to support old browsers
       //Creates files, along with sourcemaps in the gulp folder, and the Flask folder
-      .pipe(gulp.dest(paths.dist.css, {sourcemaps: '.'}))
-      .pipe(gulp.dest(paths.dist.flaskDist, {sourcemaps: '.'}))
+      //.pipe(gulp.dest(paths.dist.css, {sourcemaps: '.'}))
+      .pipe(gulp.dest('static/dist/css'))
       .pipe(browsersync.stream());
 })
 
 //JS Task
 gulp.task('js', function () {
-  return gulp.src(paths.src.js, {sourcemaps: true})
+  return gulp.src(paths.src.js)
   .pipe(terser())
   //Allow older browsers to support javascript
   .pipe (babel({presets: ['@babel/preset-env']}))
    //Creates files in the gulp folder, and the Flask folder
-  .pipe(gulp.dest(paths.dist.js, {sourcemaps: '.'}))
-  .pipe(gulp.dest(paths.dist.flaskDist, {sourcemaps: '.'}))
+  //.pipe(gulp.dest(paths.dist.js, {sourcemaps: '.'}))
+  .pipe(gulp.dest('static/dist/css'))
   .pipe(browsersync.stream());
 });
 
@@ -68,7 +68,8 @@ gulp.task('run', gulp.series('scss', 'js'));
 gulp.task('watch', function () {
   gulp.watch(paths.src.scss, gulp.series('scss'));
   gulp.watch(paths.src.js, gulp.series('js'));
-  gulp.watch('./flask-app/templates/*'), browsersync.reload();
+  //Watch for changes in the html templates
+  gulp.watch('static/templates/*html'), browsersync.reload();
 });
 
 //Execute all tasks in series (at the same time)
