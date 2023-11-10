@@ -14,11 +14,6 @@ const paths = {
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
   },
-  dist: {
-    //css: 'dist/css',
-    //js: 'dist/js',
-    flaskDist: 'static/dist', // Add this path for Flask
-  },
 };
 
 //SCSS Task
@@ -27,21 +22,17 @@ gulp.task('scss', function(){
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss([autoprefixer(), cssnano()])) 
       //autoprefixer will add browser prefixes to support old browsers
-      //Creates files, along with sourcemaps in the gulp folder, and the Flask folder
-      //.pipe(gulp.dest(paths.dist.css, {sourcemaps: '.'}))
       .pipe(gulp.dest('static/dist/css'))
       .pipe(browsersync.stream());
 })
 
 //JS Task
 gulp.task('js', function () {
-  return gulp.src(paths.src.js)
+  return gulp.src('src/js/*.js')
   .pipe(terser())
   //Allow older browsers to support javascript
   .pipe (babel({presets: ['@babel/preset-env']}))
-   //Creates files in the gulp folder, and the Flask folder
-  //.pipe(gulp.dest(paths.dist.js, {sourcemaps: '.'}))
-  .pipe(gulp.dest('static/dist/css'))
+  .pipe(gulp.dest('static/dist/js'))
   .pipe(browsersync.stream());
 });
 

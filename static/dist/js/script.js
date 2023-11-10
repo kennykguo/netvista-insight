@@ -1,8 +1,9 @@
 "use strict";
 
 var darkButton = document.getElementById("dark"),
-  lightButton = document.getElementById("light"),
-  setDarkMode = function setDarkMode() {
+  lightButton = document.getElementById("light");
+console.log("hi");
+var setDarkMode = function setDarkMode() {
     document.querySelector("body").classList = "dark", localStorage.setItem("colorMode", "dark");
   },
   setLightMode = function setLightMode() {
@@ -21,8 +22,7 @@ var darkButton = document.getElementById("dark"),
 radioButtons.forEach(function (e) {
   e.addEventListener("click", function (e) {
     darkButton.checked ? (document.querySelector("body").classList = "dark", localStorage.setItem("colorMode", "dark")) : (document.querySelector("body").classList = "light", localStorage.setItem("colorMode", "light"));
-  });
+  }), console.log("hi");
 }), window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", function (e) {
   e.matches ? darkButton.click() : lightButton.click();
 }), "dark" == (localStorage.getItem("colorMode") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")) ? darkButton.click() : lightButton.click();
-//# sourceMappingURL=script.js.map
